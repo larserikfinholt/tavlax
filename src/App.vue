@@ -41,7 +41,7 @@
   export default {
     data () {
       return {
-        drawer: true,
+        drawer: false,
         items: [
           { icon: 'apps', title: 'Welcome', to: '/' },
           { icon: 'bubble_chart', title: 'About', to: '/about' },
