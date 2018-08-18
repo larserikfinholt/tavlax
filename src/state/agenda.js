@@ -1,23 +1,27 @@
-// export const agenda = {
-//     state: {
-//         tasks: []
+import { taskService } from "../services/task-service";
 
-//     },
-//     mutations: {
-//         addTask(state, task) {
-//             state.tasks.push(task);
-//         }
-//     },
-//     actions: {
-//         addDummyData(context) {
-//             context.commit('addTask', { name: 'task1' });
+export const agenda = {
+    state: {
+        tasks: []
 
-//         }
-//     },
-//     // getters: {
-//     //     getToDay(context) {
-//     //         console.log('getting today');
-//     //         return context.state.tasks;
-//     //     }
-//     // }
-// }
+    },
+    mutations: {
+        addTask(state, task) {
+            state.tasks.push(task);
+        }
+    },
+    actions: {
+        addDummyData(context) {
+            taskService.getDummyTasks().forEach(task => {
+                context.commit('addTask', task);
+            });
+
+        }
+    },
+    getters: {
+        getToday(context) {
+            console.log('getting today',context);
+            return 123;
+        }
+    }
+}
