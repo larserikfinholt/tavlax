@@ -2,7 +2,7 @@
   <v-app light>
     <v-navigation-drawer
       mini-variant.sync="true"
-      clipped="true"
+      clipped
       v-model="drawer"
       fixed
       app
@@ -24,14 +24,14 @@
         </v-list-tile>
       </v-list>
     </v-navigation-drawer>
-    <v-toolbar fixed app clipped-left="true">
+    <v-toolbar fixed app clipped-left>
       <v-toolbar-side-icon @click="drawer = !drawer"></v-toolbar-side-icon>
       <v-toolbar-title v-text="title"></v-toolbar-title>
     </v-toolbar>
     <v-content>
      <router-view/>
     </v-content>
-    <v-footer fixed="true" app>
+    <v-footer fixed app>
       <span>&copy; 2017</span>
     </v-footer>
   </v-app>
@@ -44,7 +44,8 @@
         drawer: true,
         items: [
           { icon: 'apps', title: 'Welcome', to: '/' },
-          { icon: 'bubble_chart', title: 'Inspire', to: '/about' }
+          { icon: 'bubble_chart', title: 'About', to: '/about' },
+          { icon: 'bubble_chart', title: 'Agenda', to: '/agenda' }
         ],
         title: 'TavlaX'
       }
