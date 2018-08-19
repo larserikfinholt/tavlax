@@ -12,6 +12,7 @@ export const agenda = {
     },
     actions: {
         addDummyData(context) {
+            console.log('add dummy data agenda...')
             taskService.getDummyTasks().forEach(task => {
                 context.commit('addTask', task);
             });

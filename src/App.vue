@@ -49,6 +49,10 @@
         ],
         title: 'TavlaX'
       }
+    },
+    mounted(){
+      console.log("mounted app");
+      this.$store.dispatch('addDummyFamilyData');
     }
   }
 </script>
