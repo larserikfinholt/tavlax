@@ -1,26 +1,31 @@
 import { TaskTemplate, Task } from "../types/task";
+import  moment  from "moment";
 
 class TaskService {
 
     constructor() { }
 
-    getTemplates() {
+    getSampleWeekTemplate() {
         return [
-            new TaskTemplate(1, "Lage middag"),
-            new TaskTemplate(2, "Vaske badene"),
-            new TaskTemplate(3, "Handle")
+            new TaskTemplate(1, "Lage middag",[0,1,2,3,4,5,6]),
+            new TaskTemplate(2, "Vaske badene",[4]),
+            new TaskTemplate(3, "Handle",[0,4])
         ];
     }
 
     getDummyTasks() {
-        let templates = this.getTemplates();
+        let templates = this.getSampleWeekTemplate();
         let tasks = [];
         templates.forEach(x => {
-            tasks.push(new Task(x, new Date()));
+            x.day.forEach(d=>{
+                tasks.push(new Task(x, new moment().add(d,'days')));
+            });
         });
         return tasks;
+    }
 
-
+    loadWeekTemplate(){
+        return this.getSampleWeekTemplate();
     }
 
 

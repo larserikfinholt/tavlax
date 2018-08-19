@@ -10,9 +10,11 @@ export class Task {
 
 export class TaskTemplate {
 
-    constructor(id, name){
+    constructor(id, name, dayNo){
         this.id=id;
         this.name=name;
+        this.day = dayNo;
     }
 
 }
+

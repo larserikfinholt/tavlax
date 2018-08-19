@@ -2,13 +2,17 @@ import { taskService } from "../services/task-service";
 
 export const agenda = {
     state: {
-        tasks: []
-
+        tasks: [],
+        template:[]
     },
     mutations: {
         addTask(state, task) {
             state.tasks.push(task);
+        },
+        addTemplateTask(state, task) {
+            state.template.push(task);
         }
+
     },
     actions: {
         addDummyData(context) {
@@ -16,7 +20,9 @@ export const agenda = {
             taskService.getDummyTasks().forEach(task => {
                 context.commit('addTask', task);
             });
-
+            taskService.loadWeekTemplate().forEach(task => {
+                context.commit('addTemplateTask', task);
+            });
         }
     },
     getters: {

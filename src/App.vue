@@ -45,7 +45,8 @@
         items: [
           { icon: 'apps', title: 'Welcome', to: '/' },
           { icon: 'bubble_chart', title: 'About', to: '/about' },
-          { icon: 'bubble_chart', title: 'Agenda', to: '/agenda' }
+          { icon: 'bubble_chart', title: 'Agenda', to: '/agenda' },
+          { icon: 'bubble_chart', title: 'Planning', to: '/planning' }
         ],
         title: 'TavlaX'
       }
