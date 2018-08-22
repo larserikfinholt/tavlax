@@ -1,8 +1,8 @@
 <template>
-    <div>
-        {{date}}
+        <v-layout class="scroll-x" align-space-between justify-start row fill-height>
+        
         <Day v-for="(d,i) in dates" :key="i"  :date="d"></Day>
-    </div>
+        </v-layout>
 </template>
 
 <script>
@@ -32,4 +32,7 @@ export default {
 </script>
 
 <style>
+.scroll-x{
+    /* width: 600px; */
+}
 </style>
