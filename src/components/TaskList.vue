@@ -7,9 +7,16 @@
 </template>
 
 <script>
-import Task from '@/components/Task.vue';
+import Task from "@/components/Task.vue";
+import moment from 'moment';
+
 export default {
-  props: ["tasks"],
+  props: ["date"],
+  computed: {
+    tasks() {
+      return this.$store.state.agenda.tasks.filter(x => moment(x.startTime).isSame(moment(this.date),'day'));
+    }
+  },
   components: {
     Task
   }

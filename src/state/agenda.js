@@ -23,12 +23,12 @@ export const agenda = {
             taskService.loadWeekTemplate().forEach(task => {
                 context.commit('addTemplateTask', task);
             });
-        }
+        },
     },
     getters: {
-        getToday(context) {
-            console.log('getting today',context);
-            return 123;
+        currentWeek(context) {
+            console.log('getting current week',context);
+            // return context.state.tasks;
         }
     }
 }

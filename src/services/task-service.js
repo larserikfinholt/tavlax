@@ -1,6 +1,12 @@
 import { TaskTemplate, Task } from "../types/task";
 import  moment  from "moment";
 
+moment.locale('en', {
+    week : {
+        dow : 1 // Monday is the first day of the week
+    }
+  });
+
 class TaskService {
 
     constructor() { }
@@ -15,10 +21,12 @@ class TaskService {
 
     getDummyTasks() {
         let templates = this.getSampleWeekTemplate();
+        console.log('moment ',moment().startOf('week') );
         let tasks = [];
         templates.forEach(x => {
-            x.day.forEach(d=>{
-                tasks.push(new Task(x, new moment().add(d,'days')));
+            console.log('template', x.name, x.days)
+            x.days.forEach(d=>{
+                tasks.push(new Task(x, new moment().startOf('week').add(d,'days')));
             });
         });
         return tasks;

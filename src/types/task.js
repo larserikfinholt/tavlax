@@ -4,16 +4,17 @@ export class Task {
         this.templateId=taskTemplate.id;
         this.name=taskTemplate.name;
         this.startTime=startTime;
+        console.log('creating task ' + this.name + ' ' + this.startTime); 
     }
 }
 
 
 export class TaskTemplate {
 
-    constructor(id, name, dayNo){
+    constructor(id, name, daysArr){
         this.id=id;
         this.name=name;
-        this.day = dayNo;
+        this.days = daysArr;
     }
 
 }
