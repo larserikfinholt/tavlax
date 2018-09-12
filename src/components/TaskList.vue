@@ -1,7 +1,6 @@
 
 <template>
         <v-list two-line subheader>
-          <v-subheader inset>{{date|dayName}}</v-subheader>
 
             <Task v-for="(task, i) in tasks" :key="i" :task="task"></Task>
 
@@ -16,9 +15,9 @@
             avatar
             @click="dialog=true"
           >
-            <v-list-tile-avatar>
+            <!-- <v-list-tile-avatar>
               <v-icon :class="[item.iconClass]">{{ item.icon }}</v-icon>
-            </v-list-tile-avatar>
+            </v-list-tile-avatar> -->
 
             <v-list-tile-content>
               <v-list-tile-title>{{ item.title }}</v-list-tile-title>

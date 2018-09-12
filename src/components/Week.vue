@@ -1,5 +1,5 @@
 <template>
-        <v-layout class="scroll-x" align-space-between justify-start row fill-height>
+    <v-layout v-bind="binding">
         
         <Day v-for="(d,i) in dates" :key="i"  :date="d"></Day>
         </v-layout>
@@ -27,7 +27,22 @@ export default {
   },
   components: {
     Day
-  }
+  },
+      computed: {
+      binding () {
+        const binding = {}
+
+        if (this.$vuetify.breakpoint.smAndUp) {
+          binding.column = false;
+        } else {
+          binding.column = true;
+        }
+          console.log('breakpoint', this.$vuetify.breakpoint);
+
+        return binding
+      }
+    }
+
 };
 </script>
 
