@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from './views/Home.vue'
 import Agenda from '@/views/Agenda.vue'
 import Planning from '@/views/Planning.vue'
 
@@ -10,14 +9,10 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'home',
-      component: Home
-    },
-    {
-      path: '/agenda',
       name: 'agenda',
       component: Agenda
-    }, {
+    },
+     {
       path: '/planning',
       name: 'planning',
       component: Planning 
