@@ -2,15 +2,16 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import { agenda } from '@/state/agenda';
 import { family } from '@/state/family';
-
-Vue.use(Vuex)
+import {calendar } from '@/state/calendar';
+ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
   },
   modules: {
     agenda,
-    family
+    family,
+    calendar
   },
   mutations: {
   },
