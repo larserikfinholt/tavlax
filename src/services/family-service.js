@@ -4,6 +4,19 @@ class FamilyService {
 
     constructor() { }
 
+    getFamily(id){
+
+        let f = localStorage.getItem(id);
+        if (f){
+            console.log('family loaded',f);
+            return JSON.parse(f);
+        }
+        console.warn('family not found', id);
+        return null;
+    }
+    saveFamily(id, fam){
+        localStorage.setItem(id, JSON.stringify(fam));
+    }
 
     getDummyPersons() {
         return [

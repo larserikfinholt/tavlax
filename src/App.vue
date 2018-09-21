@@ -53,7 +53,7 @@
     },
     mounted(){
       console.log("mounted app");
-      this.$store.dispatch('addDummyFamilyData');
+      this.$store.dispatch('loadFamilyData',  this.$route.query.familyid);
     }
   }
 </script>

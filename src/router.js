@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Agenda from '@/views/Agenda.vue'
+import Firstrun from '@/views/Firstrun.vue'
 import Planning from '@/views/Planning.vue'
 
 Vue.use(Router)
@@ -16,6 +17,11 @@ export default new Router({
       path: '/planning',
       name: 'planning',
       component: Planning 
+    },
+    {
+      path: '/firstrun',
+      name: 'firstrun',
+      component: Firstrun 
     },
     {
       path: '/about',
