@@ -4,7 +4,8 @@ import router from '../router'
 export const family = {
     state: {
         name:null,
-        persons: []
+        persons: [],
+        topics:null
 
     },
     mutations: {
