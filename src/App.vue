@@ -24,7 +24,7 @@
         </v-list-tile>
       </v-list>
     </v-navigation-drawer>
-    <v-toolbar fixed app clipped-left>
+    <v-toolbar fixed app clipped-left v-if="showHeader">
       <v-toolbar-side-icon @click="drawer = !drawer"></v-toolbar-side-icon>
       <v-toolbar-title v-text="title"></v-toolbar-title>
     </v-toolbar>
@@ -54,6 +54,11 @@
     mounted(){
       console.log("mounted app");
       this.$store.dispatch('loadFamilyData',  this.$route.query.familyid);
+    },
+    computed: {
+      showHeader(){
+        return this.$route=='firstrun';
+      }
     }
   }
 </script>
