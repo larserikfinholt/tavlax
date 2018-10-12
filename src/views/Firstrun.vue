@@ -143,7 +143,7 @@ export default {
       this.family.persons.splice(-1, 1);
     },
     finish() {
-      familyService.saveFamily(this.family.name, this.family);
+      familyService.saveFamily(this.family.name.toLowerCase(), this.family);
       this.dialog = false;
     },
     isStep1Invalid() {

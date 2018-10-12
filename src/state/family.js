@@ -25,6 +25,7 @@ export const family = {
         loadFamilyData(context, familyIdFromQueryString){
             let savedFamilyId = localStorage.getItem('familyId');
             if (!savedFamilyId && !familyIdFromQueryString){
+                console.log('no saved family, and nothing in querystring, goto firstrun')
                 return router.push('/firstrun');
             }
             if (!savedFamilyId && familyIdFromQueryString){
@@ -37,18 +38,9 @@ export const family = {
                 context.commit('setFamily', family);
                 return router.push('./');
             } 
+            console.warn('family not found, goto firstrun');
             return router.push('/firstrun');
-            // context.dispatch('addDummyFamilyData');
-        },
-        addDummyFamilyData(context) {
-            console.log('add dummy data family...')
-            familyService.getDummyPersons().forEach(person => {
-                context.commit('addPerson', person);
-            });
-            context.commit('setName','Finholt');
-
         }
-
     },
     getters: {
         getCurrentUser(state, context) {
